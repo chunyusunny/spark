@@ -119,6 +119,7 @@ statement
         (RESTRICT | CASCADE)?                                          #dropNamespace
     | SHOW (DATABASES | NAMESPACES) ((FROM | IN) multipartIdentifier)?
         (LIKE? pattern=STRING)?                                        #showNamespaces
+    | SHOW MYVERSION                                                   #showMyVersion
     | createTableHeader ('(' colTypeList ')')? tableProvider?
         createTableClauses
         (AS? query)?                                                   #createTable
@@ -1142,6 +1143,7 @@ ansiNonReserved
     | MINUTE
     | MONTH
     | MSCK
+    | MYVERSION
     | NAMESPACE
     | NAMESPACES
     | NO
@@ -1396,6 +1398,7 @@ nonReserved
     | MINUTE
     | MONTH
     | MSCK
+    | MYVERSION
     | NAMESPACE
     | NAMESPACES
     | NO
@@ -1654,6 +1657,7 @@ MACRO: 'MACRO';
 MAP: 'MAP';
 MATCHED: 'MATCHED';
 MERGE: 'MERGE';
+MYVERSION: 'MYVERSION';
 MINUTE: 'MINUTE';
 MONTH: 'MONTH';
 MSCK: 'MSCK';
